@@ -1,6 +1,6 @@
 FROM php:8.2-cli
 
-ARG COMPOSER_VERSION=2.2.21
+ARG COMPOSER_VERSION=2.5.8
 
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 
