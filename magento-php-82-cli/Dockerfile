@@ -1,5 +1,7 @@
 FROM php:8.2-cli
 
+ARG COMPOSER_VERSION=2.2.21
+
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 
 RUN apt-get update && apt-get install -y \
@@ -65,3 +67,5 @@ RUN docker-php-ext-configure \
     imagick \
     redis \
     ssh2
+
+COPY --from=composer:${COMPOSER_VERSION} /usr/bin/composer /usr/bin/composer
