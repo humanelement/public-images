@@ -1,7 +1,10 @@
 name: Build PHP 8.2 CLI Image
 on:
+  schedule:
+    - cron:  '0 0 * * *'
   push:
-    branches: [ main ]
+    paths:
+      - magento-php-82-cli/**
 permissions:
   contents: read
   packages: write
