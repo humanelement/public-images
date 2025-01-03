@@ -29,14 +29,11 @@ RUN apt-get update && apt-get install -y \
     vim \
     zip \
     rsync \
+    wget \
   && rm -rf /var/lib/apt/lists/*
 
-RUN pecl channel-update pecl.php.net && pecl install \
-    imagick \
-    redis \
-    ssh2-1.3.1 \
-  && pecl clear-cache \
-  && rm -rf /tmp/pear
+ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN install-php-extensions redis ssh2 imagick
 
 RUN docker-php-ext-configure \
     gd --with-freetype --with-jpeg --with-webp \
@@ -62,7 +59,6 @@ RUN docker-php-ext-configure \
     xsl \
     zip \
   && docker-php-ext-enable \
-    imagick \
     redis \
     ssh2
 
