@@ -60,6 +60,7 @@ RUN docker-php-ext-configure \
     zip \
   && docker-php-ext-enable \
     redis \
-    ssh2
+    ssh2 \
+    imagick
 
 COPY --from=composer:2.6.6 /usr/bin/composer /usr/bin/composer
