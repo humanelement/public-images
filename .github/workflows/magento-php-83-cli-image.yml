@@ -1,10 +1,10 @@
-name: Build PHP 8.2 CLI Image
+name: Build PHP 8.3 CLI Image
 on:
   schedule:
     - cron:  '0 0 * * *'
   push:
     paths:
-      - magento-php-82-cli/**
+      - magento-php-83-cli/**
 permissions:
   contents: read
   packages: write
@@ -25,5 +25,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: "{{defaultContext}}:magento-php-82-cli"
-          tags: ghcr.io/humanelement/magento-php:8.2-cli
+          context: "{{defaultContext}}:magento-php-83-cli"
+          tags: ghcr.io/humanelement/magento-php:8.3-cli
