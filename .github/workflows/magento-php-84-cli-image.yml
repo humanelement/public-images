@@ -6,7 +6,8 @@ on:
     paths:
       - magento-php-84-cli/**
     tags:
-      - 'force-build-*'
+      - force-build
+      - force-build-8.4
 permissions:
   contents: read
   packages: write
