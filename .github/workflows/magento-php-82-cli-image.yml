@@ -5,6 +5,8 @@ on:
   push:
     paths:
       - magento-php-82-cli/**
+    tags:
+      - 'force-build-*'
 permissions:
   contents: read
   packages: write
